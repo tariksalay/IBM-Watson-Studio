@@ -1,38 +1,43 @@
-# US Economic Indicators — Pandas & Bokeh Notebooks
+# US Economic Indicators: pandas and Bokeh
 
-**Python · pandas · Jupyter Notebook · Bokeh · Data Exploration**
+**Python · pandas · Jupyter · Bokeh · Data preparation**
 
-A small collection of educational notebooks exploring data preparation and visualization. The main exercise analyzes US gross domestic product (GDP) and unemployment data and generates a simple interactive comparison chart.
+A small collection of IBM/Cognitive Class learning exercises, plus a local dashboard script. The main workflow aligns GDP change and unemployment observations by date and produces an interactive Bokeh HTML chart.
 
-> **Context:** These are IBM/Cognitive Class learning exercises rather than an independently commissioned production dashboard. The notebooks retain original course instructions and externally hosted course datasets.
+## What this project demonstrates
 
-## Included notebooks
+- Reading, filtering, and indexing tabular CSV/Excel data.
+- Joining related time-series observations before visualization.
+- A local analysis path that works without cloud credentials.
 
-| Notebook | Content |
+## Start here
+
+| Read | Use it for |
 | --- | --- |
-| [Jupyter.ipynb](Jupyter.ipynb) | Loads GDP and unemployment CSV data, filters unemployment observations, and creates a Bokeh chart comparing GDP percentage change with unemployment |
-| [Panda.ipynb](Panda.ipynb) | Introductory pandas exercise covering DataFrames, reading CSV/Excel files, and indexing data |
+| [Project walkthrough](docs/PROJECT_GUIDE.md) | Purpose, workflow, repository map, and a concrete example |
+| [Code and artifact reference](docs/CODE_REFERENCE.md) | Important files, functions, classes, and their responsibilities |
+| [Development guide](docs/DEVELOPMENT.md) | Setup, configuration, commands, tests, and remaining limitations |
 
-## Skills demonstrated
+## Explore locally
 
-- Reading remote CSV and Excel datasets into pandas DataFrames.
-- Inspecting and filtering structured data.
-- Visualizing time-series indicators with Bokeh.
-- Presenting analytical output in notebooks.
+Use Python 3.11 or 3.12 in a virtual environment.
 
-## How to explore
-
-Open either notebook in Jupyter Notebook, JupyterLab, or another compatible notebook environment. The original exercises reference externally hosted IBM course datasets, so data availability and dependency compatibility may have changed since the notebooks were created.
-
-```bash
-pip install notebook pandas bokeh openpyxl
-jupyter notebook
+```sh
+python -m pip install -r requirements.txt
+python dashboard.py path/to/gdp.csv path/to/unemployment.csv --output dashboard.html
+python -m unittest discover -s tests -v
 ```
 
-These are **suggested exploration dependencies, not a tested or pinned environment**. Some older Bokeh parameters or links may require updates.
+Use `jupyter lab` to open the original notebooks after installing the requirements.
 
-## Limitations
+## Validation and scope
 
-The notebooks are coursework with included instructional text; they do not establish production deployment, automated refreshes, or independently verified dashboard performance. This repository preserves the exercises as part of an early data science learning portfolio.
+Four tests pass for notebook structure, executable code cells, embedded-credential patterns, input lengths, and synthetic CSV alignment. Live course-dataset URLs and IBM Cloud export were not tested. These are educational exercises; there is no scheduled refresh or maintained production dashboard.
 
-[GitHub profile](https://github.com/tariksalay) · [Portfolio](https://tariksalay.github.io/)
+
+
+---
+
+[GitHub profile](https://github.com/tariksalay) · [Portfolio](https://tariksalay.github.io/) · [Earlier README](README_HISTORY.md)
+
+The earlier README is preserved as historical context; the guides above describe this branch's implementation.
